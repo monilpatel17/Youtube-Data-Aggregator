@@ -1,0 +1,260 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.background {
+	background: black;
+	background-blend-mode: darken;
+	background-size: cover;
+}
+
+.nav-list {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	list-style: none;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo img {
+	width: 180px;
+	border-radius: 50px;
+}
+
+.nav-list li {
+	list-style: none;
+	padding: 26px 30px;
+	padding: 10px;
+}
+
+.nav-list li a {
+	text-decoration: none;
+	color: white;
+}
+
+.nav-list li a:hover {
+	color: grey;
+}
+
+.rightnav {
+	width: 30%;
+	text-align: right;
+}
+
+#search {
+	padding: 5px;
+	font-size: 17px;
+	border: 2px solid grey;
+	border-radius: 9px;
+}
+
+.btn {
+	padding: 8px 20px;
+	margin: 7px 0;
+	border: 2px solid white;
+	border-radius: 8px;
+	background: none;
+	color: white;
+	cursor: pointer;
+}
+
+.btn-sm {
+	padding: 6px 10px;
+	vertical-align: middle;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 90px; /* Adjust the height as per your navbar's size */
+	width: 90px; /* Adjust the width as needed */
+}
+.webpage-name {
+    clear: both;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  .search-box {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .search-box input[type=search] {
+    width: 50%;
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+
+/* Part #2 */
+.channel-overview {
+    background-color: white; /* Red color matching the image */
+    color: Black; /* White text color */
+    padding: 20px;
+    margin-top: 20px; /* Space between search box and overview */
+  }
+
+  .channel-overview h2 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .channel-details {
+    margin: 10px 0;
+  }
+
+  .channel-details div {
+    margin-bottom: 5px; /* Spacing between details */
+  }
+
+  .channel-details label {
+    font-weight: bold;
+  }
+
+.channel-details .channel-name {
+    font-size: 28px; /* Larger font size for channel name */
+    margin-bottom: 10px; /* Extra spacing below the channel name */
+  }
+
+.details-container { /* New container for left and right details */
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container .left-details,
+.details-container .right-details {
+  flex-basis: 50%;
+}
+
+/* Additional styling for individual details */
+.details-container div {
+  margin-bottom: 5px;
+}
+
+.details-container label {
+  font-weight: bold;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+  }
+
+  .details-container .left-details,
+  .details-container .right-details {
+    flex-basis: 100%;
+  }
+  
+  
+}
+/* Graphs Section */
+.graphs-section {
+  background-color: white; /* Keep it consistent with channel-overview */
+  color: black; /* Same text color as channel-overview */
+  padding: 20px;
+  margin-top: 20px; /* Consistent spacing as channel-overview */
+}
+
+.graphs-section h2 {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px; /* Consistent spacing as channel-overview */
+}
+
+.graphs-section p, .graphs-section ul {
+  padding: 0 15px; /* Padding to match channel-overview styling */
+  text-align: justify;
+}
+
+.graphs-section ul {
+  list-style: inside square; /* Styling choice for the list */
+}
+
+/* You may also want to ensure that the graphs themselves have consistent styling */
+.graph {
+  /* Style for graphs (e.g., consistent margins, heights) */
+}
+
+@media screen and (max-width: 768px) {
+  /* Responsive adjustments if needed */
+}
+
+.graphs-section img {
+  max-width: 70%; /* ensures image is not wider than its container */
+  height: auto; /* maintains aspect ratio */
+  display: block; /* removes inline characteristics */
+  margin: 0 auto; /* centers image in the container if it's not as wide as the container */
+}
+
+/* Playlist Heading */
+.playlist-head {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+}
+
+/* Playlist Name */
+.playlist-name {
+    font-size: 20px; /* Larger font size for playlist name */
+    margin-bottom: 15px; /* Extra spacing below the playlist name */
+    display: flex;
+ margin-bottom: 15px;
+  flex-basis: 50%;
+}
+
+.playlist-name label {
+    font-weight: bold;
+}
+
+/* Container for Playlist Details */
+.details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Extra space above the container */
+}
+
+/* Left Details Specific to Playlist */
+.left-details-playlist {
+    flex-basis: 50%;
+}
+
+.left-details-playlist div {
+    margin-bottom: 15px; /* Increased spacing between details */
+}
+
+.left-details-playlist label {
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .left-details-playlist {
+        flex-basis: 100%;
+    }
+}
+

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <style>
+        .playlist-details-box {
+            display: block; /* Adjust according to the desired default display setting */
+        }
+        
+        .playlist-details {
+            display: flex;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+        
+        .playlist-thumbnail {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+        
+        .playlist-thumbnail img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .playlist-info {
+            flex: 1;
+        }
+        
+
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .background {
+            background: black;
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+        
+        .nav-list {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 180px;
+            border-radius: 50px;
+        }
+        
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+            padding: 10px;
+        }
+        
+        .nav-list li a {
+            text-decoration: none;
+            color: white;
+            font-size: larger;
+        }
+        
+        .nav-list li a:hover {
+            color: grey;
+        }
+        
+        .rightnav {
+            width: 30%;
+            text-align: right;
+        }
+        
+        #search {
+            padding: 5px;
+            font-size: 17px;
+            border: 2px solid grey;
+            border-radius: 9px;
+        }
+        
+        .btn {
+            padding: 8px 20px;
+            margin: 7px 0;
+            border: 2px solid white;
+            border-radius: 8px;
+            background: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .btn-sm {
+            padding: 6px 10px;
+            vertical-align: middle;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 90px; /* Adjust the height as per your navbar's size */
+            width: 90px; /* Adjust the width as needed */
+        }
+        .webpage-name {
+            clear: both;
+            color: #333;
+            text-align: center;
+            font-size: 45px;
+            padding: 20px;
+          }
+        
+          .search-box {
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+          }
+        
+          .search-box input[type=search] {
+            width: 50%;
+            padding: 10px;
+            font-size: 17px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+          }
+        
+        /* Part #2 */
+        .channel-overview {
+            background-color: white; /* Red color matching the image */
+            color: Black; /* White text color */
+            padding: 20px;
+            margin-top: 20px; /* Space between search box and overview */
+          }
+        
+          .channel-overview h1 {
+            color: #d9534f; /* Match color from code 2 */
+            text-align: center;
+             margin-bottom: 30px;
+          }
+        
+          .channel-details {
+            margin: 10px 0;
+            background: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+          }
+        
+          .channel-details div {
+            margin-bottom: 5px; /* Spacing between details */
+          }
+        
+          .channel-details label {
+            font-weight: bold;
+          }
+        
+        .channel-details .channel-name {
+            font-size: 28px; /* Larger font size for channel name */
+            margin-bottom: 10px; /* Extra spacing below the channel name */
+          }
+        
+        .details-container { /* New container for left and right details */
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        .details-container .left-details,
+        .details-container .right-details {
+          flex-basis: 50%;
+          font-size: 20px;
+        }
+        
+        
+        
+        /* Additional styling for individual details */
+        .details-container div {
+          margin-bottom: 5px;
+        }
+        
+        .details-container label {
+          font-weight: bold;
+        }
+        
+        /* Adjustments for smaller screens */
+        @media screen and (max-width: 768px) {
+          .details-container {
+            flex-direction: column;
+          }
+        
+          .details-container .left-details,
+          .details-container .right-details {
+            flex-basis: 100%;
+          }
+          
+          
+        }
+        /* Graphs Section */
+        .graphs-section {
+          background-color: white; /* Keep it consistent with channel-overview */
+          color: black; /* Same text color as channel-overview */
+          padding: 20px;
+          margin-top: 20px; /* Consistent spacing as channel-overview */
+        }
+        
+        .graphs-section h1 {
+          text-align: center;
+          margin: 0;
+          padding-bottom: 10px; /* Consistent spacing as channel-overview */
+          color:#d9534f;
+        }
+        
+        .graphs-section p, .graphs-section ul {
+          padding: 0 15px; /* Padding to match channel-overview styling */
+          text-align: justify;
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        
+        
+        
+        /* You may also want to ensure that the graphs themselves have consistent styling */
+        .graph {
+          /* Style for graphs (e.g., consistent margins, heights) */
+        }
+        
+        @media screen and (max-width: 768px) {
+          /* Responsive adjustments if needed */
+        }
+        
+        .graphs-section ul {
+            list-style: inside square; /* Existing styling */
+            font-size: 20px;
+            margin-bottom: 20px; /* Added margin to create more space above the image */
+          }
+          
+          .graphs-section img {
+            max-width: 70%; /* Existing styling */
+            height: auto;
+            display: block;
+            margin: 50px auto; /* Added margin to create more space above and below the image */
+          }
+          
+        
+        /* Playlist Heading */
+        .playlist-head {
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+        }
+        
+        /* Playlist Name */
+        .playlist-name {
+            font-size: 20px; /* Larger font size for playlist name */
+            margin-bottom: 15px; /* Extra spacing below the playlist name */
+            display: flex;
+         margin-bottom: 15px;
+          flex-basis: 50%;
+        }
+        
+        .playlist-name label {
+            font-weight: bold;
+        }
+        
+        /* Container for Playlist Details */
+        .details-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px; /* Extra space above the container */
+        }
+        
+        /* Left Details Specific to Playlist */
+        .left-details-playlist {
+            flex-basis: 50%;
+        }
+        
+        .left-details-playlist div {
+            margin-bottom: 15px; /* Increased spacing between details */
+        }
+        
+        .left-details-playlist label {
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .left-details-playlist {
+                flex-basis: 100%;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Global Styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #ddd;
+        }
+        
+        /* Header */
+        
+        header {
+            background-color: white;
+            color: rgb(0, 0, 0);
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #40b736;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links a:hover {
+            background-color: #40b736;
+            border-radius: 4px;
+            color: white;
+        }
+        
+        /* About Section */
+        
+        .about {
+            background: rgb(224, 251, 222);
+            background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(173, 252, 163) 100%);
+            padding: 100px 0 20px 0;
+            text-align: center;
+        }
+        
+        .about h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            font-size: 1rem;
+            color: #323030;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-info {
+            margin: 2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .about-img {
+            width: 20rem;
+            height: 20rem;
+        
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: contain;
+        }
+        
+        .about-info p {
+            font-size: 1.3rem;
+            margin: 0 2rem;
+            text-align: justify;
+        }
+        
+        button {
+            border: none;
+            outline: 0;
+            padding: 10px;
+            margin: 2rem;
+            font-size: 1rem;
+            color: white;
+            background-color: #40b736;
+            text-align: center;
+            cursor: pointer;
+            width: 15rem;
+            border-radius: 4px;
+        }
+        
+        button:hover {
+            background-color: #1f9405;
+        }
+        
+        /* Team Section */
+        
+        .team {
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .team h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .team-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 18rem;
+            height: 25rem;
+            margin-top: 10px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card-img {
+            width: 18rem;
+            height: 12rem;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+        
+        .card-info button {
+            margin: 2rem 1rem;
+        }
+
+        .description{
+            padding-bottom: 20px;
+        }
+        
+        .card-name {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        
+        .card-role {
+            font-size: 1rem;
+            color: #888;
+            margin: 5px 0;
+        }
+        
+        .card-email {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: block;
+            }
+        
+            .logo {
+                text-align: center;
+            }
+        
+            .nav-links {
+                margin-top: 1rem;
+                justify-content: space-between;
+            }
+        
+            .nav-links li {
+                margin-right: 0;
+            }
+        
+            .about h1 {
+                font-size: 2rem;
+            }
+        
+            .about p {
+                font-size: 0.9rem;
+            }
+        
+            .about-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .about-img {
+                width: 60%;
+                height: 60%;
+                margin-bottom: 1rem;
+            }
+        
+            .about-info p {
+                margin: 1rem 2rem;
+            }
+        
+            .about-info button {
+                margin: 1rem 2rem;
+                width: 10rem;
+            }
+        
+            .team {
+                margin: 0 1rem;
+            }
+        }
+        
+        
+        
+
+    </style>
+</head>
+<body>
+    <nav class="navbar background">
+        <div class="logo" style="background-image: url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        <ul class="nav-list">
+            <li><a href="#web">Home</a></li>
+            <li><a href="#program">About us</a></li>
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search" placeholder = "Find On Page">
+        </div>
+    </nav>
+    <div class="webpage-name">
+      YouTube Data Aggregator
+    </div>
+    
+    <form action="{% url 'home' %}" method="get">
+        <div class="search-box">
+            <input type="search" name="channel_id" placeholder="Enter Channel ID">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+    
+    <!-- part #2 -->
+    {% if channel_info %}
+    <div class="channel-overview">
+      <h1>Channel Performance Overview</h1>
+      <div class="channel-details">
+        <!-- Channel name remains here -->
+        <div class="channel-name">
+          <label>Channel:</label> <a href="https://www.youtube.com/channel/{{ channel_info.id }}" target="_blank">{{ channel_info.title }}</a>
+        </div>
+
+    
+        <!-- New container for left and right details -->
+        <div class="details-container">
+          <div class="left-details">
+            <div><label>Subscribers:</label> {{ channel_info.subscriberCount }}</div>
+            <div><label>Total Views:</label> {{ channel_info.viewCount }}</div>
+            <div><label>Total Videos:</label> {{ channel_info.videoCount }}</div>
+          </div>
+          <div class="right-details">
+            <div class = "description"><label>Description:</label> {{ channel_info.description }}</div>
+            <div><label>Created On:</label> {{ channel_info.creation_date }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    {% if graph_image_base64 %}
+
+    <div class="graphs-section">
+      <h1>Graphs</h1>
+      <p>The graph displays four key data analytics metrics for a YouTube channel:</p>
+      <ul>
+        <li>Top 5 playlist of youtube channel by views.</li>
+        <li>Top 5 videos of youtube channel by views.</li>
+        <li>Each video's viewership is quantified, reflecting its popularity. This data is then presented on a graph, showcasing the relationship between the duration of the videos and their respective popularity.</li>
+        <li>Each playlist's viewership is quantified, reflecting its popularity. This data is then presented on a graph, showcasing the relationship between the duration of the playlist and their respective popularity.</li>
+      </ul>
+    
+    </div>
+    <img src="data:image/png;base64,{{ graph_image_base64 }}" alt="Graph" style="width: 100%; height:auto" >
+    {% endif %}
+
+    {% if playlists %}
+    <div class="playlist-head">
+        <h1>Detailed Playlist Insights</h1>
+    </div>
+    <div class="playlist-details-box">
+        {% for playlist in playlists %}
+        <div class="playlist-details">
+            <div class="playlist-thumbnail">
+                <img src="{{ playlist.thumbnail }}" alt="{{ playlist.title }} Thumbnail">
+            </div>
+            <div class="playlist-info">
+                <h2>Playlist: <a href="{{ playlist.url }}" target="_blank">{{ playlist.title }}</a></h2>
+                <p><strong>Video Count:</strong> {{ playlist.number_of_videos }} videos</p>
+                <p><strong>Total Duration:</strong> {{ playlist.total_duration_seconds }} hours of content</p>
+                <p><strong>Created On(EST/EDT):</strong> {{ playlist.creation_time }}</p>
+                <p><strong>Total Views:</strong> {{ playlist.total_views }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    
+
+
+    
+ 
+    
+ 
+    <footer>
+        <p>© 2024 YouData. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script to toggle playlist details
+        function toggleAllPlaylists() {
+            var playlistDetailsBox = document.querySelector('.playlist-details-box');
+            playlistDetailsBox.style.display = playlistDetailsBox.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>
